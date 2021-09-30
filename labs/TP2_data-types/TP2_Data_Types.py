@@ -12,9 +12,16 @@ Original file is located at
 #Ask the user to enter a number then display whether it is even or odd?
 
 #1. TODO
+x = input("Please enter a number:")
+x = int(x)
+y = x%2
+if y == 1:
+	print("This is an odd number.")
+else:
+	print("This is an even number")
 
 
-
+    
 """Exercise 2 - Ticket price
 The price for visting a castle is as following:
 +  free for children between 0 and 11 years old
@@ -25,12 +32,15 @@ Write  a  program  that  asks  for  the  user’s  age  and  returns  the  price
 """
 
 #2. TODO
-
-
-
-
-
-
+x = input("Please enter your age:")
+x = int(x)
+if x < 12:
+	print ("Price : 0")
+elif 12 <= x < 18 or x >= 60:
+	print ("Price: 5")
+else:
+	print ("Price : 10")
+    
 
 
 """text{Exercise 3 - How much to pay employees? 
@@ -38,11 +48,15 @@ Write a program to ask the user for hours and rate per hour to compute gross pay
 """
 
 #3. TODO
-
-
-
-
-
+x = input ("How many hours do you work?")
+x = int(x)
+y = input ("How much are you paid per hour?")
+y = int(y)
+z = x * y
+if x > 40:
+	print (z * 1.5)
+else:
+	print (z)
 
 
 
@@ -53,20 +67,48 @@ Hints:
 -  You can use `str()`,`int()` and `float()`functions in this exercice 
 """
 
-user_input = input("Enter something:")
 #TODO
-
-
+user_input = input("Enter something: ")
+try:
+	val = int(user_input)
+	print("This is an integer.")	
+except ValueError:
+	try:
+		val = float(user_input)
+		print("This is a floating number.")
+	except ValueError:
+		print ("This is a string of characters.")
 
 
 
 """Exercise 5 - Handle Non-numeric Input
 Rewrite your pay program of exercise 3 so that your program handles non-numeric input.
-
 """
 
 #TODO
+x = input("Please enter your age:")
+try:
+	x = int(x)
+	if x < 12:
+		print ("Price : 0")
+	elif x == int and 12 <= x < 18 or x >= 60:
+		print ("Price: 5")
+	else:
+		print ("Price : 10")	
+except ValueError:
+	x = input ("Please enter a number: ")
+	try:
+		x = int(x)
+		if x < 12:
+			print ("Price : 0")
+		elif x == int and 12 <= x < 18 or x >= 60:
+			print ("Price: 5")
+		else:
+			print ("Price : 10")	
+	except ValueError:
+		print ("You need to write down a number.")
 
+### Je n'ai pas réussi à créer une boucle...
 
 
 
